@@ -5,11 +5,7 @@ import clsx from 'clsx'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
-import {
-  GitHubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-} from '@/components/SocialIcons'
+import { GitHubIcon, InstagramIcon, LinkedInIcon } from '@/components/SocialIcons'
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
@@ -84,9 +80,7 @@ function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 function Article({ article }: { article: ArticleWithSlug }) {
   return (
     <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
-        {article.title}
-      </Card.Title>
+      <Card.Title href={`/articles/${article.slug}`}>{article.title}</Card.Title>
       <Card.Eyebrow as="time" dateTime={article.date} decorate>
         {formatDate(article.date)}
       </Card.Eyebrow>
@@ -149,10 +143,8 @@ interface Role {
 }
 
 function Role({ role }: { role: Role }) {
-  let startLabel =
-    typeof role.start === 'string' ? role.start : role.start.label
-  let startDate =
-    typeof role.start === 'string' ? role.start : role.start.dateTime
+  let startLabel = typeof role.start === 'string' ? role.start : role.start.label
+  let startDate = typeof role.start === 'string' ? role.start : role.start.dateTime
 
   let endLabel = typeof role.end === 'string' ? role.end : role.end.label
   let endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
@@ -168,16 +160,13 @@ function Role({ role }: { role: Role }) {
           {role.company}
         </dd>
         <dt className="sr-only">Role</dt>
-        <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-          {role.title}
-        </dd>
+        <dd className="text-xs text-zinc-500 dark:text-zinc-400">{role.title}</dd>
         <dt className="sr-only">Date</dt>
         <dd
           className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
           aria-label={`${startLabel} until ${endLabel}`}
         >
-          <time dateTime={startDate}>{startLabel}</time>{' '}
-          <span aria-hidden="true">—</span>{' '}
+          <time dateTime={startDate}>{startLabel}</time> <span aria-hidden="true">—</span>{' '}
           <time dateTime={endDate}>{endLabel}</time>
         </dd>
       </dl>
@@ -188,35 +177,42 @@ function Role({ role }: { role: Role }) {
 function Resume() {
   let resume: Array<Role> = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
+      company: '한화모멘텀(주)',
+      title: 'Software Developer',
       logo: logoPlanetaria,
-      start: '2019',
+      start: '2023.05.',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
-      end: '2019',
+      company: '(주)더아이엠씨',
+      title: 'Software Developer',
+      logo: logoPlanetaria,
+      start: '2022.12.',
+      end: '2023.05.',
     },
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
+      company: '한국기술교육대학교',
+      title: 'Software Developer',
+      logo: logoPlanetaria,
+      start: '2017.12.',
+      end: '2020.08.',
     },
     {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      company: '(주)레나소프트웨어',
+      title: 'Software Developer',
+      logo: logoPlanetaria,
+      start: '2016.09.',
+      end: '2017.05.',
+    },
+    {
+      company: '마이모',
+      title: 'Software Developer',
+      logo: logoPlanetaria,
+      start: '2015.08.',
+      end: '2016.0.',
     },
   ]
 
@@ -224,17 +220,17 @@ function Resume() {
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Work</span>
+        <span className="ml-3">Main Work</span>
       </h2>
       <ol className="mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
+      {/* <Button href="#" variant="secondary" className="group mt-6 w-full">
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button>
+      </Button> */}
     </div>
   )
 }
@@ -250,7 +246,7 @@ function Photos() {
             key={image.src}
             className={clsx(
               'relative w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
-              rotations[imageIndex % rotations.length],
+              rotations[imageIndex % rotations.length]
             )}
           >
             <div className="aspect-9/10">
@@ -279,7 +275,8 @@ export default async function Home() {
             Software developer & engineer.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Jin-hwan, a software developer and enginner based in Pangyo. I design and develop logistics optimization software at a logistics equipment manufacturing company.
+            I’m Jin-hwan, a software developer and enginner based in Pangyo. I design and develop
+            logistics optimization software at a logistics equipment manufacturing company.
           </p>
           <div className="mt-6 flex gap-6">
             {/* <SocialLink href="#" aria-label="Follow on X" icon={ThreadsIcon} /> */}
@@ -310,7 +307,7 @@ export default async function Home() {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
+            {/* <Newsletter /> */}
             <Resume />
           </div>
         </div>
