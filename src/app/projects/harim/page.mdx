@@ -24,14 +24,14 @@ export default (props) => <ArticleLayout article={project} {...props} />
 - **개발인원:** 2명
 - **기술스택:** C# .NET Framework
 
-**성과**
+## 성과
 
 - **운영 안정성 향상:** 스템 구축 후 약 2년(20개월 이상) 동안 무장애 운영 달성
 - **설비 효율 증대:** 기존 1대만 가동되던 Gantry 설비를 전체 동시 운영 가능하도록 개선하여 물류 처리량 증대
 - **기술 부채 감소:** 3종 디바이스(AS/RS, Miniload, Gantry)의 복잡한 레이아웃·규칙을 Strategy Pattern으로 분리·추상화하여 코드
   가독성·유지보수성·확장성을 극대화
 
-**역할**
+## 역할
 
 - **객체 지향 설계 강화** (Strategy Pattern 기반 리팩토링)
   - 무구조·스파게티 코드였던 기존 로직을 Strategy Pattern으로 완전 재구조
@@ -40,7 +40,7 @@ export default (props) => <ArticleLayout article={project} {...props} />
   - SKU·LOT 기반 Gantry 적재 알고리즘 개발
   - LineBalancing을 위한 AS/RS & Miniload 적재 알고리즘 개발
 
-**소감**
+## 소감
 
 본 프로젝트는 각 설비의 적재 방식과 레이아웃이 모두 달라 다양한 적재 규칙을 유연하게 적용해야 하는, 구현 복잡도가 상당히 높은 과제였다. 기존 코드베이스는
 객체지향 설계가 미흡하여 가독성과 재사용성이 낮았기 때문에, 프로젝트에 투입된 후 현실에 맞는 객체 모델링을 전면 재정립하는 작업부터 시작했다.
@@ -56,7 +56,7 @@ export default (props) => <ArticleLayout article={project} {...props} />
 
 <i>보안 상 설계와 관련하여 더 디테일한 내용은 해당 페이지에 담지 않음</i>
 
-**트러블 슈팅(Trouble Shooting)**
+## 트러블 슈팅(Trouble Shooting)
 
 **1) Dual Fork ASRS의 적재 파편화 해결을 통한 물류 운영 효율 최적화**
 
