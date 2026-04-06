@@ -1,0 +1,48 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+
+export const project = {
+  author: 'Kim Jin-hwan',
+  date: '2022-03',
+  title: '원격교육 LMS 시스템 운영 및 웹 취약점 대응 개선',
+  description:
+    '원격평생교육원 및 원격교육연수원 2종 LMS(Learning Management System) 시스템 운영 및 웹 취약점 대응 개선 프로젝트로, 시스템 안정성 확보와 보안 강화에 중점을 둔 프로젝트',
+}
+
+export const metadata = {
+  title: project.title,
+  description: project.description,
+}
+
+export default (props) => <ArticleLayout article={project} {...props} />
+
+## 원격교육 LMS 시스템 운영 및 웹 취약점 대응 개선
+
+![원격교육 LMS 시스템 화면](https://bck-popol.s3.ap-northeast-2.amazonaws.com/lms-1.png)
+
+- **원격평생교육원**: 학점은행제를 기반으로 한 정규 학위 과정의 온라인 교육 제공
+- **원격교육연수원**: 교사·공무원·직장인 대상의 직무 연수 및 전문성 향상을 위한 맞춤형 온라인 연수 과정 제공
+
+## 주요 기술
+- Java, Spring Framework, JavaScript, MySQL, Apache, WAS
+
+## 담당 역할
+
+- 원격평생교육원 및 원격교육연수원 LMS 시스템 운영 전반 담당 (Full-Stack)
+- 교수자 사이트 리뉴얼, 수강신청 전산화, 성적 산출 시뮬레이션 기능 개발
+- 시스템 장애 모니터링 및 이슈 대응, 리소스 사용량 분석
+- SQL 쿼리 및 프로시저 개발 및 리팩토링
+- SQL Injection, XSS, 인증 등 웹 보안 취약점 대응 및 보완 조치
+- Apache, WAS 서버 운영 및 개발자 계정, 라이선스 관리 등 **플랫폼 유지보수 일체 수행**
+
+## 핵심 성과
+
+- **시스템 장애 시 신속한 대응 체계 확립**, 트래픽 급증 시기 **지연/오류 문의 0건** 달성
+- **웹 보안 취약점 개선을 통해 S/W 품질 향상 및 사용자 수 3배 증가**
+- 복잡한 학사업무(수강신청/성적 산출 등)의 디지털 전환으로 **업무 효율성 향상**
+
+## 주요 이슈 및 해결 방법
+
+- 조회 데이터 건수 증가 및 접속자 급증 시 응답 속도 저하
+    - 대량 데이터 조회 쿼리의 비효율적 실행 계획과 동시 사용자 요청으로 인한 데이터베이스 부하
+    - **쿼리 튜닝:** 불필요한 조인 제거, SELECT * 대신 필요한 컬럼만 지정
