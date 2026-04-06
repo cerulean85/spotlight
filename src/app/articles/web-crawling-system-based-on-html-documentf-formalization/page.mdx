@@ -1,0 +1,39 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import designSystem from './planetaria-design-system.png'
+
+export const article = {
+  author: 'Adam Wathan',
+  date: '2022-04',
+  title: 'WCTT: Web Crawling System based on HTML Document Formalization',
+  description:
+    'This paper introduces WCTT, a web crawling system that utilizes tag paths and text frequency to standardize text collection logic, thereby simplifying maintenance and supporting keyword analysis.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+<br/>
+
+**국문명:** WCTT: HTML 문서 정형화 기반 웹 크롤링 시스템
+
+**[PAPER]** <a href="https://scienceon.kisti.re.kr/commons/util/originalView.do?cn=JAKO202212462666743&dbt=JAKO&koi=KISTI1.1003%2FJNL.JAKO202212462666743" target="_blank" rel="noopener noreferrer">WCTT: Web Crawling System based on HTML Document Formalization</a>
+
+## ABSTRACT
+
+Web crawler, which is mainly used to collect text on the web today, is difficult to maintain and expand because
+researchers must implement different collection logic by collection channel after analyzing tags and styles of HTML
+documents. To solve this problem, the web crawler should be able to collect text by formalizing HTML documents to the same structure. In this paper, we designed and implemented WCTT(Web Crawling system based on Tag path and Text
+appearance frequency), a web crawling system that collects text with a single collection logic by formalizing HTML
+documents based on tag path and text appearance frequency. Because WCTT collects texts with the same logic for all
+collection channels, it is easy to maintain and expand the collection channel. In addition, it provides the preprocessing
+function that removes stopwords and extracts only nouns for keyword network analysis and so on.
+
+## 요 약
+
+오늘날 웹상의 본문 수집에 주로 이용되는 웹 크롤러는 연구자가 직접 HTML 문서의 태그와 스타일을 분석한 후
+수집 채널마다 다른 수집 로직을 구현해야 하므로 유지 관리 및 확장이 어렵다. 이러한 문제점을 해결하려면 웹 크롤러는 구조가 서로 다른 HTML 문서를 동일한 구조로 정형화하여 본문을 수집할 수 있어야 한다. 따라서 본 논문에서는 태그 경로 및 텍스트 출현 빈도를 기반으로 HTML 문서를 정형화하여 하나의 수집 로직으로 본문을 수집하는 웹
+크롤링 시스템인 WCTT(Web Crawling system based on Tag path and Text appearance frequency)를 설계 및 구현하였다. WCTT는 모든 수집 채널에서 동일한 로직으로 본문을 수집하므로 유지 관리 및 수집 채널의 확장이 용이하다. 또한, 키워드 네트워크 분석 등을 위해 불용어를 제거하고 명사만 추출하는 전처리 기능도 제공한다.

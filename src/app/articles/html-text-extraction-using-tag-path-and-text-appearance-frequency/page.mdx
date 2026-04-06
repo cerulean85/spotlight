@@ -1,0 +1,32 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Adam Wathan',
+  date: '2021-12',
+  title: 'HTML Text Extraction Using Tag Path and Text Appearance Frequency',
+  description:
+    'This paper proposes a robust text extraction method that combines text frequency analysis with DOM tree parent tag paths to ensure high accuracy across diverse web page configurations.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+<br/>
+
+**국문명:** 태그 경로 및 텍스트 출현 빈도를 이용한 HTML 본문 추출
+
+**[PAPER]** <a href="https://scienceon.kisti.re.kr/commons/util/originalView.do?cn=JAKO202102661348107&oCn=JAKO202102661348107&dbt=JAKO&journal=NJOU00431883" target="_blank" rel="noopener noreferrer">HTML Text Extraction Using Tag Path and Text Appearance Frequency</a>
+
+## 요 약
+
+
+웹 페이지에서 필요한 텍스트를 정확하게 추출하기 위해 본문이 존재하는 곳의 태그와 스타일 속성을 웹 크롤러에 명시하는 방법은 웹 페이지 구성이 변경될 때마다 본문을 추출하는 로직을 수정해야 하는 문제가 있다. 이러한 문제점을 해결하기 위해 이전 연구에서 제안한 텍스트의 출현 빈도를 분석하여 본문을 추출하는 방법은 웹 페이지의
+수집 채널에 따라 성능 편차가 크다는 한계점이 있었다. 따라서 본 논문에서는 텍스트의 출현 빈도뿐만 아니라 웹 페이지의 DOM 트리로부터 추출된 텍스트 노드의 부모 태그 경로를 분석하여 다양한 수집 채널에서 높은 정확도로 본문을 추출하는 방법을 제안하였다.
+
+## ABSTRACT
+
+In order to accurately extract the necessary text from the web page, the method of specifying the tag and style attributes where the main contents exist to the web crawler has a problem in that the logic for extracting the main contents. This method needs to be modified whenever the web page configuration is changed. In order to solve this problem, the method of extracting the text by analyzing the frequency of appearance of the text proposed in the previous study had a limitation in that the performance deviation was large depending on the collection channel of the web page. Therefore, in this paper, we proposed a method of extracting texts with high accuracy from various collection channels by analyzing not only the frequency of appearance of text but also parent tag paths of text nodes extracted from the DOM tree of web pages.

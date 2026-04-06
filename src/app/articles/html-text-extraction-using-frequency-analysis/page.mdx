@@ -1,0 +1,36 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Adam Wathan',
+  date: '2021-09',
+  title: 'HTML Text Extraction Using Frequency Analysis',
+  description:
+    'This study proposes a tag-independent text extraction method that isolates main content by analyzing text frequency to filter out repetitive elements, eliminating the need for manual HTML configuration.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+<br/>
+
+**국문명:** 빈도 분석을 이용한 HTML 텍스트 추출
+
+**[PAPER]** <a href="https://scienceon.kisti.re.kr/commons/util/originalView.do?cn=JAKO202102661348107&oCn=JAKO202102661348107&dbt=JAKO&journal=NJOU00431883" target="_blank" rel="noopener noreferrer">HTML Text Extraction Using Tag Path and Text Appearance Frequency</a>
+
+## 요 약
+
+최근 빅데이터 분석을 위해 웹 크롤러를 이용한 텍스트 수집이 빈번하게 이루어지고 있다. 하지만 수많은 태그와
+텍스트로 복잡하게 구성된 웹 페이지에서 필요한 텍스트만을 수집하기 위해서는 웹 크롤러에 빅데이터 분석에 필요한 본문이 포함된 HTML태그와 스타일 속성을 명시해야 하는 번거로움이 있다. 본 논문에서는 HTML태그와 스타일 속성을 명시하지 않고 웹 페이지에서 출현하는 텍스트의 빈도를 이용하여 본문을 추출하는 방법을 제안하였다. 제안한 방법에서는 수집된 모든 웹 페이지의 DOM 트리에서 텍스트를 추출하여 텍스트의 출현 빈도를 분석한 후, 출현 빈도가 높은 텍스트를 제외시킴으로써 본문을 추출하였으며, 본 연구에서 제안한 방법과 기존 방법의 정확도 비교를 통해서 본 연구에서 제안한 방법의 우수성을 검증하였다. 
+
+## ABSTRACT
+
+Recently, text collection using a web crawler for big data analysis has been frequently performed. However, in order
+to collect only the necessary text from a web page that is complexly composed of numerous tags and texts, there is a cumbersome requirement to specify HTML tags and style attributes that contain the text required for big data analysis in
+the web crawler. In this paper, we proposed a method of extracting text using the frequency of text appearing in web
+pages without specifying HTML tags and style attributes. In the proposed method, the text was extracted from the DOM
+tree of all collected web pages, the frequency of appearance of the text was analyzed, and the main text was extracted
+by excluding the text with high frequency of appearance. Through this study, the superiority of the proposed method was verified.
