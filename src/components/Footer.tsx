@@ -34,7 +34,7 @@ export function Footer() {
                 <NavLink href="/about">About</NavLink>
                 <NavLink href="/projects">Projects</NavLink>
                 <NavLink href="/articles">Articles</NavLink>
-                <NavLink href="https://kkennib-blog.dycdyp.com" target="_blank">
+                <NavLink href="https://archives.dycdyp.com" target="_blank">
                   Archives
                 </NavLink>
                 {/* <NavLink href="/speaking">Speaking</NavLink> */}

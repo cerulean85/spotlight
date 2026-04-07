@@ -109,7 +109,7 @@ function MobileNavigation(props: React.ComponentPropsWithoutRef<typeof Popover>)
             <MobileNavItem href="/about">About</MobileNavItem>
             <MobileNavItem href="/projects">Projects</MobileNavItem>
             <MobileNavItem href="/articles">Articles</MobileNavItem>
-            <MobileNavItem href="https://kkennib-blog.dycdyp.com">Archives</MobileNavItem>
+            <MobileNavItem href="https://archives.dycdyp.com">Archives</MobileNavItem>
             {/* <MobileNavItem href="/uses">Uses</MobileNavItem> */}
           </ul>
         </nav>
@@ -158,7 +158,7 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
         <NavItem href="/about">About</NavItem>
         <NavItem href="/projects">Projects</NavItem>
         <NavItem href="/articles">Articles</NavItem>
-        <NavItem href="https://kkennib-blog.dycdyp.com" target="_blank">
+        <NavItem href="https://archives.dycdyp.com" target="_blank">
           Archives
         </NavItem>
         {/* <NavItem href="/speaking">Speaking</NavItem> */}
