@@ -2,9 +2,22 @@ import Link from 'next/link'
 
 import { ContainerInner, ContainerOuter } from '@/components/Container'
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+function NavLink({
+  href,
+  children,
+  target,
+}: {
+  href: string
+  children: React.ReactNode
+  target?: string
+}) {
   return (
-    <Link href={href} className="transition hover:text-teal-500 dark:hover:text-teal-400">
+    <Link
+      href={href}
+      target={target}
+      rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+      className="transition hover:text-teal-500 dark:hover:text-teal-400"
+    >
       {children}
     </Link>
   )
@@ -21,7 +34,9 @@ export function Footer() {
                 <NavLink href="/about">About</NavLink>
                 <NavLink href="/projects">Projects</NavLink>
                 <NavLink href="/articles">Articles</NavLink>
-
+                <NavLink href="https://kkennib-blog.dycdyp.com" target="_blank">
+                  Archives
+                </NavLink>
                 {/* <NavLink href="/speaking">Speaking</NavLink> */}
                 {/* <NavLink href="/uses">Uses</NavLink> */}
               </div>

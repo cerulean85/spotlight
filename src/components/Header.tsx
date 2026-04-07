@@ -109,7 +109,7 @@ function MobileNavigation(props: React.ComponentPropsWithoutRef<typeof Popover>)
             <MobileNavItem href="/about">About</MobileNavItem>
             <MobileNavItem href="/projects">Projects</MobileNavItem>
             <MobileNavItem href="/articles">Articles</MobileNavItem>
-            {/* <MobileNavItem href="/speaking">Speaking</MobileNavItem> */}
+            <MobileNavItem href="https://kkennib-blog.dycdyp.com">Archives</MobileNavItem>
             {/* <MobileNavItem href="/uses">Uses</MobileNavItem> */}
           </ul>
         </nav>
@@ -118,13 +118,23 @@ function MobileNavigation(props: React.ComponentPropsWithoutRef<typeof Popover>)
   )
 }
 
-function NavItem({ href, children }: { href: string; children: React.ReactNode }) {
+function NavItem({
+  href,
+  children,
+  target,
+}: {
+  href: string
+  children: React.ReactNode
+  target?: string
+}) {
   let isActive = usePathname() === href
 
   return (
     <li>
       <Link
         href={href}
+        target={target}
+        rel={target === '_blank' ? 'noopener noreferrer' : undefined}
         className={clsx(
           'relative block px-3 py-2 transition',
           isActive
@@ -148,6 +158,9 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
         <NavItem href="/about">About</NavItem>
         <NavItem href="/projects">Projects</NavItem>
         <NavItem href="/articles">Articles</NavItem>
+        <NavItem href="https://kkennib-blog.dycdyp.com" target="_blank">
+          Archives
+        </NavItem>
         {/* <NavItem href="/speaking">Speaking</NavItem> */}
         {/* <NavItem href="/uses">Uses</NavItem> */}
       </ul>
