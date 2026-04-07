@@ -272,11 +272,12 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Software developer & engineer.
+            Software Developer & Engineer.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Jin-hwan, a software developer and enginner based in Pangyo. I design and develop
-            logistics optimization software at a logistics equipment manufacturing company.
+            새로운 기술에 도전하는 소프트웨어 개발자입니다. 디지털 트윈(Digital Twin)과 AX(AI
+            Transformation) 분야에 관심이 많으며, 현재는 한화모멘텀(주)에서 근무하며 물류 최적화를
+            위한 관제 및 AI 기술을 활용한 솔루션 개발에 주력하고 있습니다.
           </p>
           <div className="mt-6 flex gap-6">
             {/* <SocialLink href="#" aria-label="Follow on X" icon={ThreadsIcon} /> */}
