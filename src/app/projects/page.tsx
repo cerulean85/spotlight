@@ -25,7 +25,7 @@ function Project({ project }: { project: ProjectWithSlug }) {
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: "Things I've built trying to solve problems and learn new technologies.",
+  description: '문제를 해결하고 늘 새로운 기술에 도전합니다.',
 }
 
 export default async function ProjectsIndex() {
@@ -33,8 +33,8 @@ export default async function ProjectsIndex() {
 
   return (
     <SimpleLayout
-      title="Things I've built trying to solve problems and learn new technologies."
-      intro="I've worked on various projects over the years, from AI/ML systems to Logistics control system. Here are some of the projects I'm most proud of."
+      title="PROJECTS"
+      intro="대표적인 프로젝트와 문제를 해결하고, 새로운 기술을 탐구하는 과정에서 얻은 경험과 지식을 공유합니다."
     >
       <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
         <div className="flex max-w-3xl flex-col space-y-16">
