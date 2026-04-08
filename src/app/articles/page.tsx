@@ -24,7 +24,7 @@ function Article({ article }: { article: ArticleWithSlug }) {
 }
 
 export const metadata: Metadata = {
-  title: '아티클 소개',
+  title: 'Articles',
   description: '소프트웨어 설계 및 개발에 관하여 작성한 논문 및 에세이를 공유합니다.',
 }
 
