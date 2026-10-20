@@ -3,21 +3,31 @@ import { type Metadata } from 'next'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { type ProjectWithSlug, getAllProjects } from '@/lib/projects'
-import { formatDate } from '@/lib/formatDate'
+import { formatDate, formatPeriod } from '@/lib/formatDate'
+
+function projectDateLabel(project: ProjectWithSlug) {
+  return project.startDate
+    ? formatPeriod(project.startDate, project.endDate)
+    : formatDate(project.date)
+}
 
 function Project({ project }: { project: ProjectWithSlug }) {
+  let dateTime = project.startDate ?? project.date
+  let label = projectDateLabel(project)
+
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
         <Card.Title href={`/projects/${project.slug}`}>{project.title}</Card.Title>
-        <Card.Eyebrow as="time" dateTime={project.date} className="md:hidden" decorate>
-          {formatDate(project.date)}
+        <Card.Eyebrow as="time" dateTime={dateTime} className="md:hidden" decorate>
+          {label}
         </Card.Eyebrow>
-        <Card.Description>{project.description}</Card.Description>
+        <Card.Description className="line-clamp-3">{project.description}</Card.Description>
+        {project.stack && project.stack.length > 0 && <Card.Tags tags={project.stack} />}
         <Card.Cta>Read project</Card.Cta>
       </Card>
-      <Card.Eyebrow as="time" dateTime={project.date} className="mt-1 max-md:hidden">
-        {formatDate(project.date)}
+      <Card.Eyebrow as="time" dateTime={dateTime} className="mt-1 max-md:hidden">
+        {label}
       </Card.Eyebrow>
     </article>
   )

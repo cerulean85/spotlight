@@ -67,13 +67,30 @@ Card.Title = function CardTitle<T extends React.ElementType = 'h2'>({
 
 Card.Description = function CardDescription({
   children,
+  className,
 }: {
   children: React.ReactNode
+  className?: string
 }) {
   return (
-    <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+    <p className={clsx(className, 'relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400')}>
       {children}
     </p>
+  )
+}
+
+Card.Tags = function CardTags({ tags }: { tags: string[] }) {
+  return (
+    <ul className="relative z-10 mt-3 flex flex-wrap gap-1.5">
+      {tags.map((tag) => (
+        <li
+          key={tag}
+          className="rounded-full bg-zinc-100 px-2 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
+        >
+          {tag}
+        </li>
+      ))}
+    </ul>
   )
 }
 
